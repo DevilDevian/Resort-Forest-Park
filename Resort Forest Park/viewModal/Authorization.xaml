@@ -1,0 +1,239 @@
+﻿<Window x:Class="Resort_Forest_Park.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Resort_Forest_Park"
+        mc:Ignorable="d"
+        Title="Курортный лесопарк"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        Height="500" Width="900"
+        Background="White">
+
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="0"/>
+    </WindowChrome.WindowChrome>
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Background="#FF76E383"
+              Grid.ColumnSpan="2"
+              MouseDown="Grid_MouseDown">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Button Content="О нас"
+                    Name="help_pr"
+                       Foreground="Black"
+                       Grid.Column="0"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       FontFamily="Comic Sans MS"
+                       FontSize="20" Height="26" Width="120"
+                       VerticalContentAlignment="Center"
+                       Background="{x:Null}"
+                       BorderBrush="{x:Null}"
+                       FontWeight="Medium"
+                       Click="help_pr_Click">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+
+            <Button Content="Новости"
+                       Foreground="Black"
+                       Grid.Column="1"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       VerticalContentAlignment="Center"
+                       FontFamily="Comic Sans MS"
+                       FontSize="17" Height="26" Width="120"
+                       Background="{x:Null}"
+                       BorderBrush="{x:Null}">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+
+            <Button Content="Галерея"
+                       Foreground="Black"
+                       Grid.Column="2" Width="120"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       VerticalContentAlignment="Center"
+                       FontFamily="Comic Sans MS"
+                       FontSize="17" Height="26"
+                       Background="{x:Null}"
+                       BorderBrush="{x:Null}">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+
+            <Button Content="Контакты"
+                       Foreground="Black"
+                       Grid.Column="3" Width="120"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       VerticalContentAlignment="Center"
+                       FontFamily="Comic Sans MS"
+                       FontSize="17" Height="26"
+                       Background="{x:Null}"
+                       BorderBrush="{x:Null}">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+
+            <Button     Name="closeProgramm"
+                        Click="closeProgramm_Click"
+                        Foreground="White"
+                        FontSize="10"
+                        FontWeight="Medium"
+                        Margin="250,0,10,0"
+                        BorderBrush="Black"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Right"
+                        Height="26" Width="30"
+                        BorderThickness="1"
+                        Background="#FF498C51"
+                        Grid.Column="4"
+                        Cursor="Hand">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+
+                <Image Source="/images/powerOff.png" Stretch="Fill" />
+            </Button>
+
+
+        </Grid>
+
+        <Border Background="#FF76E383" Grid.Column="0" Grid.Row="1"
+                CornerRadius="35" Height="360" Width="400"
+                VerticalAlignment="Center" HorizontalAlignment="Center">
+
+            <StackPanel Grid.Row="1" Background="#FF76E383"
+                        Margin="10" VerticalAlignment="Center">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal"
+                            Margin="0,0,0,20">
+                        <Image Width="50" Height="50" RenderOptions.BitmapScalingMode="Fant"
+                               Source="/images/logo.png"/>
+                        <TextBlock Text="Курортный лесопарк"
+                           Foreground="Black"
+                           FontSize="25"
+                           FontWeight="Medium"
+                           VerticalAlignment="Center"
+                           FontFamily="Comic Sans MS"
+                               Margin="10,0,0,0"/>
+                    </StackPanel>
+                    <TextBlock Text="Много леса — не губи,"
+                       Foreground="White"
+                       FontSize="25"
+                       FontFamily="Comic Sans MS"
+                       FontWeight="Medium"/>
+                    <TextBlock Text="Мало леса — береги,"
+                       Foreground="White"
+                       FontSize="25"
+                       FontFamily="Comic Sans MS"
+                       FontWeight="Medium"/>
+                    <TextBlock Text="Нет леса — посади."
+                       Foreground="White"
+                       FontSize="25"
+                       FontFamily="Comic Sans MS"
+                       FontWeight="Medium"/>
+                    <TextBlock Text="Учреждение создано для охраны, защиты и воспроизводства защитных лесов, расположенных на территории Санкт-Петербурга в границах Курортного лесопарка и Глуховского лесопарка по материалам лесоустройства."
+                       Foreground="Black"
+                       FontSize="14"
+                       FontFamily="Comic Sans MS"
+                       FontWeight="Medium"
+                       TextWrapping="Wrap"
+                           Margin="0,10,0,0"/>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Border Background="#FF76E383" Grid.Column="1" Grid.Row="1"
+                CornerRadius="35" Height="360" Width="400"
+                VerticalAlignment="Center" HorizontalAlignment="Center">
+
+                <StackPanel Grid.Row="1" Background="#FF76E383"
+                        Margin="10" VerticalAlignment="Center">
+                    <StackPanel>
+                        <TextBlock Text="Авторизация"
+                               Foreground="Black"
+                               FontSize="25" TextAlignment="Center"
+                               FontWeight="Medium"
+                               VerticalAlignment="Center"
+                               FontFamily="Comic Sans MS"
+                               Margin="10,0,0,0"/>
+                        <StackPanel Orientation="Vertical">
+
+                            <TextBox Name="logTb" Background="#FF498C51"
+                                 Foreground="White" FontSize="20"
+                                 FontFamily="Comic Sans MS" Margin="30,20,30,20"/>
+                            <PasswordBox Name="PassTb" Background="#FF498C51"
+                                     Foreground="White" FontSize="20"
+                                     FontFamily="Comic Sans MS" Margin="30,20,30,20"
+                                         PasswordChanged="PassTb_PasswordChanged"/>
+                            <Button Name="LogBtn" Content="Войти"
+                                FontFamily="Comic Sans MS" FontSize="20" Foreground="White"
+                                Margin="30,20,30,20" Background="#FF498C51"
+                                Click="LogBtn_Click"/>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+            <TextBlock Name="BlockTime" FontFamily="comic sans ms"
+                       FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center"
+                       Margin="0,260,0,0" Width="350" TextAlignment="Center"
+                       Foreground="Red"/>
+            <TextBlock Text="Введите логин"
+                       FontSize="18" Margin="-190,-110,0,0" Width="120" Height="20"
+                       Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"
+                       IsHitTestVisible="False">
+                <TextBlock.Style>
+                    <Style TargetType="{x:Type TextBlock}">
+                        <Setter Property="Visibility" Value="Hidden"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Text, ElementName= logTb}" Value="">
+                                <Setter Property="Visibility" Value="Visible"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
+            <TextBlock Text="Введите пароль" Name="Passtextblock"
+                       FontSize="18" Margin="-160,30,0,0" Width="150" Height="25"
+                       Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"
+                       IsHitTestVisible="False"/>
+        </Grid>
+    </Grid>
+</Window>

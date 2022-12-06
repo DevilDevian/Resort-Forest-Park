@@ -1,0 +1,172 @@
+﻿<Window x:Class="Resort_Forest_Park.viewModal.Shift_Supervisor"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Resort_Forest_Park.viewModal"
+        mc:Ignorable="d"
+        Title="Меню старшего смены"
+        WindowStartupLocation="CenterScreen"
+        Height="370" Width="900"
+        ResizeMode="NoResize">
+
+    <Grid>
+        <TabControl>
+            <TabItem Header="Просмотр заказов">
+                <DataGrid   Name="OrdersDgv" Margin="10"
+                            ColumnWidth="*" RowHeaderWidth="0"
+                            AutoGenerateColumns="False"
+                            HorizontalAlignment="Center" BorderBrush="{x:Null}"
+                            Background="Transparent"
+                            CanUserResizeColumns="False" CanUserResizeRows="False" 
+                            IsReadOnly="True" RowBackground="#FF76E383"
+                            VerticalAlignment="Top">
+
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Дата составления" Binding="{Binding dateAdd}">
+                            <DataGridTextColumn.HeaderStyle>
+                                <Style TargetType="{x:Type DataGridColumnHeader}">
+                                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                    <Setter Property="Background" Value="#FF498C51"/>
+                                    <Setter Property="BorderThickness" Value="1"/>
+                                    <Setter Property="BorderBrush" Value="Black"/>
+                                    <Setter Property="FontSize" Value="12"/>
+                                    <Setter Property="Foreground" Value="White"/>
+                                    <Setter Property="FontFamily" Value="comic sans MS"/>
+                                </Style>
+                            </DataGridTextColumn.HeaderStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="Время" Binding="{Binding time}">
+                            <DataGridTextColumn.HeaderStyle>
+                                <Style TargetType="{x:Type DataGridColumnHeader}">
+                                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                    <Setter Property="Background" Value="#FF498C51"/>
+                                    <Setter Property="BorderThickness" Value="1"/>
+                                    <Setter Property="BorderBrush" Value="Black"/>
+                                    <Setter Property="FontSize" Value="12"/>
+                                    <Setter Property="Foreground" Value="White"/>
+                                    <Setter Property="FontFamily" Value="comic sans MS"/>
+                                </Style>
+                            </DataGridTextColumn.HeaderStyle>
+                        </DataGridTextColumn>
+
+                        <DataGridTextColumn Header="Код клиента" Binding="{Binding id_clients}">
+                            <DataGridTextColumn.HeaderStyle>
+                                <Style TargetType="{x:Type DataGridColumnHeader}">
+                                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                    <Setter Property="Background" Value="#FF498C51"/>
+                                    <Setter Property="BorderThickness" Value="1"/>
+                                    <Setter Property="BorderBrush" Value="Black"/>
+                                    <Setter Property="FontSize" Value="12"/>
+                                    <Setter Property="Foreground" Value="White"/>
+                                    <Setter Property="FontFamily" Value="comic sans MS"/>
+                                </Style>
+                            </DataGridTextColumn.HeaderStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="Статус" Binding="{Binding StatusOrder.name}">
+                            <DataGridTextColumn.HeaderStyle>
+                                <Style TargetType="{x:Type DataGridColumnHeader}">
+                                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                    <Setter Property="Background" Value="#FF498C51"/>
+                                    <Setter Property="BorderThickness" Value="1"/>
+                                    <Setter Property="BorderBrush" Value="Black"/>
+                                    <Setter Property="FontSize" Value="12"/>
+                                    <Setter Property="Foreground" Value="White"/>
+                                    <Setter Property="FontFamily" Value="comic sans MS"/>
+                                </Style>
+                            </DataGridTextColumn.HeaderStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="Дата завершения" Binding="{Binding dateEnd}">
+                            <DataGridTextColumn.HeaderStyle>
+                                <Style TargetType="{x:Type DataGridColumnHeader}">
+                                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                    <Setter Property="Background" Value="#FF498C51"/>
+                                    <Setter Property="BorderThickness" Value="1"/>
+                                    <Setter Property="BorderBrush" Value="Black"/>
+                                    <Setter Property="FontSize" Value="12"/>
+                                    <Setter Property="Foreground" Value="White"/>
+                                    <Setter Property="FontFamily" Value="comic sans MS"/>
+                                </Style>
+                            </DataGridTextColumn.HeaderStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="Время в прокате (мин)" Binding="{Binding time_rental_in_minutes}">
+                            <DataGridTextColumn.HeaderStyle>
+                                <Style TargetType="{x:Type DataGridColumnHeader}">
+                                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                    <Setter Property="Background" Value="#FF498C51"/>
+                                    <Setter Property="BorderThickness" Value="1"/>
+                                    <Setter Property="BorderBrush" Value="Black"/>
+                                    <Setter Property="FontSize" Value="12"/>
+                                    <Setter Property="Foreground" Value="White"/>
+                                    <Setter Property="FontFamily" Value="comic sans MS"/>
+                                </Style>
+                            </DataGridTextColumn.HeaderStyle>
+                        </DataGridTextColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+            <TabItem Header="Сформировать заказ">
+                <Grid>
+                    <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Left"
+                                Margin="10,10,0,10">
+                        <DatePicker Name="dateAddOrder" Width="310" Height="35"
+                                    Margin="0,0,0,10" FontSize="16"
+                                    Background="#FF498C51" Foreground="Black"/>
+                        <TextBox Name="timeOrder" Width="310" Height="35"
+                                 Margin="0,0,0,10" FontSize="16"
+                                 Background="#FF498C51" Foreground="White"/>
+                        <ComboBox Name="idClientsCMB" Width="310" Height="35"
+                                  Margin="0,0,0,10" FontSize="16" ItemsSource="{Binding Client.id_clients}"
+                                  Background="#FF498C51" Foreground="White"/>
+                        <ComboBox Name="statusCMB" Width="310" Height="35"
+                                  Margin="0,0,0,10" FontSize="16" ItemsSource="{Binding StatusOrder.name}"
+                                  Background="#FF498C51" Foreground="White"/>
+                        <DatePicker Name="dateEndOrder" Width="310" Height="35"
+                                    Margin="0,0,0,10" FontSize="16"
+                                    Background="#FF498C51" Foreground="Black"/>
+                        <TextBox Name="time_in_rental" Width="310" Height="35"
+                                 FontSize="16" Background="#FF498C51" Foreground="White"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" 
+                                VerticalAlignment="Center" 
+                                HorizontalAlignment="Center" Width="244" Height="290">
+                        <Label Name="surname_txtblock" Width="160" Height="40"
+                               Foreground="Black" FontFamily="comic sans ms" FontSize="12"
+                               IsHitTestVisible="False" Content="Выберите дату создания"
+                               HorizontalAlignment="Left" Margin="0,0,0,10"
+                               VerticalContentAlignment="Center"/>
+                        <Label Name="name_txtblock" Width="160" Height="40"
+                               Foreground="Black" FontFamily="comic sans ms" FontSize="12"
+                               IsHitTestVisible="False" Content="Введите время создания"
+                               HorizontalAlignment="Left" Margin="0,0,0,10"
+                               VerticalContentAlignment="Center"/>
+                        <Label Name="patronymic_txtblock" Width="160" Height="40"
+                               Foreground="Black" FontFamily="comic sans ms" FontSize="12"
+                               IsHitTestVisible="False" Content="Выберите клиента"
+                               HorizontalAlignment="Left" Margin="0,0,0,10"
+                               VerticalContentAlignment="Center"/>
+                        <Label Name="login_txtblock" Width="160" Height="40"
+                               Foreground="Black" FontFamily="comic sans ms" FontSize="12"
+                               IsHitTestVisible="False" Content="Выберите статус"
+                               HorizontalAlignment="Left" Margin="0,0,0,10"
+                               VerticalContentAlignment="Center"/>
+                        <Label Name="PasswordTb_txtblock" Width="160" Height="40"
+                               Foreground="Black" FontFamily="comic sans ms" FontSize="12"
+                               IsHitTestVisible="False" Content="Выберите дату завершения (если есть)"
+                               HorizontalAlignment="Left" Margin="0,0,0,10"
+                               VerticalContentAlignment="Center"/>
+                        <Label Name="TypeUsers_txtblock" Width="160" Height="40"
+                               Foreground="Black" FontFamily="comic sans ms" FontSize="12"
+                               IsHitTestVisible="False" Content="Введите время в прокате"
+                               HorizontalAlignment="Left"
+                               VerticalContentAlignment="Center"/>
+                    </StackPanel>
+                    <Button Name="CreareOrder" Content="Создать"
+                                FontFamily="Comic Sans MS" FontSize="16" Foreground="White"
+                                Background="#FF498C51"
+                                Click="CreareOrder_Click" Margin="569,137,10,129" d:LayoutOverrides="VerticalAlignment"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
